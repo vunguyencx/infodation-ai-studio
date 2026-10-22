@@ -23,23 +23,24 @@
   }
 
   function header(kind, current) {
-    var bp = kind === 'bp';
-    var links = bp
+    var bp = kind === 'bp', sol = kind === 'sol';
+    // solution pages: IntelliCAD (dark blueprint header) and IntelliDOC / IntelliCALL (light header, Vietnamese section ids)
+    var links = bp || sol
       ? '<a class="back" href="' + url('solutions.html') + '" data-i18n="nav.back"></a>' +
         '<a href="#demo" data-i18n="nav.demoLink"></a>' +
-        '<a href="#solution-profile" data-i18n="nav.solProfile"></a>' +
+        '<a href="' + (sol ? '#ho-so-giai-phap' : '#solution-profile') + '" data-i18n="nav.solProfile"></a>' +
         langSwitch() +
-        '<a href="#contact" class="btn btn-accent btn-nav" data-i18n="nav.book60"></a>'
+        '<a href="' + (sol ? '#lien-he' : '#contact') + '" class="btn btn-accent btn-nav" data-i18n="nav.book60"></a>'
       : '<a href="' + url('solutions.html') + '"' + (current === 'solutions' ? ' aria-current="page"' : '') + ' data-i18n="nav.solutions"></a>' +
         '<a href="' + url('technologies.html') + '"' + (current === 'tech' ? ' aria-current="page"' : '') + ' data-i18n="nav.tech"></a>' +
         '<a href="' + url('index.html#profile') + '" data-spy="profile" data-i18n="nav.profile"></a>' +
         langSwitch() +
         '<a href="' + url('index.html#contact') + '" class="btn btn-accent btn-nav" data-i18n="nav.demo"></a>';
     return '<a class="skip" href="#main" data-i18n="nav.skip"></a>' +
-      '<header class="site-header' + (bp ? ' bp-header' : '') + '"><div class="wrap bar">' +
-      '<a href="' + url('index.html') + '" class="brand"><img src="' + url(bp ? 'assets/img/logo-white.svg' : 'assets/img/logo-ink.svg') + '" alt="Infodation" width="128" height="34"><span class="studio-tag">AI STUDIO</span></a>' +
+      '<header class="site-header' + (bp ? ' bp-header' : sol ? ' bp-header sol-header' : '') + '"><div class="wrap bar">' +
+      '<a href="' + url('index.html') + '" class="brand"><img src="' + url(bp || sol ? 'assets/img/logo-white.svg' : 'assets/img/logo-ink.svg') + '" alt="Infodation" width="128" height="34"><span class="studio-tag">AI STUDIO</span></a>' +
       '<button type="button" class="menu-btn" aria-expanded="false" aria-controls="main-nav" data-i18n="nav.menu"></button>' +
-      '<nav id="main-nav" class="main-nav" data-i18n-attr="aria-label:' + (bp ? 'nav.detailNav' : 'nav.main') + '">' + links + '</nav>' +
+      '<nav id="main-nav" class="main-nav" data-i18n-attr="aria-label:' + (bp || sol ? 'nav.detailNav' : 'nav.main') + '">' + links + '</nav>' +
       '</div></header>';
   }
 
@@ -61,7 +62,7 @@
   function mount() {
     document.querySelectorAll('[data-layout]').forEach(function (el) {
       var k = el.getAttribute('data-layout');
-      el.outerHTML = k === 'footer' ? footer() : header(k === 'bp-header' ? 'bp' : 'light', el.getAttribute('data-current'));
+      el.outerHTML = k === 'footer' ? footer() : header(k === 'bp-header' ? 'bp' : k === 'sol-header' ? 'sol' : 'light', el.getAttribute('data-current'));
     });
     icons(document);
     spy();

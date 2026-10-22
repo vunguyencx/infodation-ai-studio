@@ -97,12 +97,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .bp-header .brand img { height: 34px; }
 .bp-header .main-nav { gap: 26px; }
 .bp-header .main-nav > a:not(.btn) { color: var(--bp-text); }
+.main-nav > a.back { color: var(--text-3); }
 .bp-header .main-nav > a.back { color: var(--bp-m1); }
 .bp-header .btn-accent { color: var(--bp); }
 .bp-header .lang { background: transparent; border-color: rgba(255,255,255,.25); }
 .bp-header .lang button { color: var(--bp-m1); }
 .bp-header .lang button[aria-pressed="true"] { background: #FFFFFF; color: var(--bp); }
 .bp-header .menu-btn { color: #FFFFFF; border-color: rgba(255,255,255,.5); }
+/* IntelliDOC / IntelliCALL: same dark header as IntelliCAD, in each page's own tone */
+body[data-solution="document-ai"] .sol-header { background: rgba(31,36,40,.95); border-bottom-color: rgba(221,242,71,.18); }
+body[data-solution="document-ai"] .sol-header .studio-tag { color: #1F2428; background: #DDF247; }
+body[data-solution="document-ai"] .sol-header .main-nav > a:not(.btn) { color: #F3F5F7; }
+body[data-solution="document-ai"] .sol-header .main-nav > a.back,
+body[data-solution="document-ai"] .sol-header .lang button { color: #B8BEC4; }
+body[data-solution="document-ai"] .sol-header .main-nav > a:not(.btn)::after { background: #DDF247; }
+body[data-solution="document-ai"] .sol-header .btn-accent,
+body[data-solution="document-ai"] .sol-header .lang button[aria-pressed="true"] { color: #1F2428; }
+body[data-solution="voice-bot"] .sol-header { background: rgba(27,24,56,.95); border-bottom-color: rgba(106,84,240,.32); }
+body[data-solution="voice-bot"] .sol-header .studio-tag { color: #1B1838; background: #4FD6E8; }
+body[data-solution="voice-bot"] .sol-header .main-nav > a:not(.btn) { color: #F5F4FA; }
+body[data-solution="voice-bot"] .sol-header .main-nav > a.back,
+body[data-solution="voice-bot"] .sol-header .lang button { color: #C4BFE6; }
+body[data-solution="voice-bot"] .sol-header .main-nav > a:not(.btn)::after { background: #4FD6E8; }
+body[data-solution="voice-bot"] .sol-header .btn-accent,
+body[data-solution="voice-bot"] .sol-header .lang button[aria-pressed="true"] { color: #1B1838; }
 
 @media (max-width: 920px) {
   .menu-btn { display: inline-flex; }
