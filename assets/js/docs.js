@@ -3,15 +3,81 @@ window.IFD_DOCS = {
   "company-profile": {
     "en": {
       "path": "assets/docs/company-profile/en.pdf",
-      "name": "Infodation-Vietnam-Company-Profile-EN.pdf",
-      "size": 4914530,
-      "updated": "2026-10-22T08:14:44.154Z"
+      "name": "Infodation_Company-Profile_EN.pdf",
+      "size": 5089003,
+      "updated": "2026-10-22T09:27:12.239Z"
     },
     "vi": {
       "path": "assets/docs/company-profile/vi.pdf",
-      "name": "Hồ sơ năng lực-Infodation Việt Nam-VI.pdf",
-      "size": 4992850,
-      "updated": "2026-10-22T08:14:44.155Z"
+      "name": "Infodation_Company-Profile_VN.pdf",
+      "size": 5269835,
+      "updated": "2026-10-22T09:27:12.250Z"
+    },
+    "nl": {
+      "path": "assets/docs/company-profile/nl.pdf",
+      "name": "Infodation_Company-Profile_NL.pdf",
+      "size": 4921125,
+      "updated": "2026-10-22T09:27:12.250Z"
+    }
+  },
+  "intellicad": {
+    "en": {
+      "path": "assets/docs/intellicad/en.pdf",
+      "name": "IFD_IntelliCAD_Capability-Brief_EN.pdf",
+      "size": 1857658,
+      "updated": "2026-10-22T09:30:19.667Z"
+    },
+    "vi": {
+      "path": "assets/docs/intellicad/vi.pdf",
+      "name": "IFD_IntelliCAD_Capability-Brief_VI.pdf",
+      "size": 1926770,
+      "updated": "2026-10-22T09:30:19.668Z"
+    },
+    "nl": {
+      "path": "assets/docs/intellicad/nl.pdf",
+      "name": "IFD_IntelliCAD_Capability-Brief_NL.pdf",
+      "size": 2124402,
+      "updated": "2026-10-22T09:30:19.668Z"
+    }
+  },
+  "voice-bot": {
+    "en": {
+      "path": "assets/docs/voice-bot/en.pdf",
+      "name": "IFD_IntelliCALL_Capability-Brief_EN.pdf",
+      "size": 1025303,
+      "updated": "2026-10-22T09:31:15.089Z"
+    },
+    "vi": {
+      "path": "assets/docs/voice-bot/vi.pdf",
+      "name": "IFD_IntelliCALL_Capability-Brief_VI.pdf",
+      "size": 1104754,
+      "updated": "2026-10-22T09:31:15.090Z"
+    },
+    "nl": {
+      "path": "assets/docs/voice-bot/nl.pdf",
+      "name": "IFD_IntelliCALL_Capability-Brief_NL.pdf",
+      "size": 1550576,
+      "updated": "2026-10-22T09:31:15.090Z"
+    }
+  },
+  "document-ai": {
+    "en": {
+      "path": "assets/docs/document-ai/en.pdf",
+      "name": "IFD_IntelliDOC_Capability-Brief_EN.pdf",
+      "size": 568431,
+      "updated": "2026-10-22T09:31:58.561Z"
+    },
+    "vi": {
+      "path": "assets/docs/document-ai/vi.pdf",
+      "name": "IFD_IntelliDOC_Capability-Brief_VI.pdf",
+      "size": 776808,
+      "updated": "2026-10-22T09:31:58.562Z"
+    },
+    "nl": {
+      "path": "assets/docs/document-ai/nl.pdf",
+      "name": "IFD_IntelliDOC_Capability-Brief_NL.pdf",
+      "size": 1758427,
+      "updated": "2026-10-22T09:31:58.562Z"
     }
   }
 };

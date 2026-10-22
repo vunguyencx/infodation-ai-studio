@@ -139,7 +139,7 @@
   /* Documents uploaded in admin → assets/js/docs.js. Each key has one PDF per language;
    * visitors get the file in the page language, else the English one, else the built-in default. */
   var DOC_DEFAULT = { 'company-profile': S.companyPdf, 'intellicad': 'assets/docs/IntelliCAD_Solution-profile.pdf' };
-  var DOC_NAME = { 'company-profile': 'Infodation_Company-profile', 'intellicad': 'IntelliCAD_Solution-profile', 'document-ai': 'IntelliDOC_Solution-profile', 'voice-bot': 'IntelliCALL_Solution-profile' };
+  var DOC_NAME = { 'company-profile': 'Infodation_Company-profile', 'intellicad': 'IFD_IntelliCAD_Capability-Brief', 'document-ai': 'IFD_IntelliDOC_Capability-Brief', 'voice-bot': 'IFD_IntelliCALL_Capability-Brief' };
   function doc(key) {
     var d = (window.IFD_DOCS || {})[key] || {}, lang = d[I.lang] ? I.lang : 'en', e = d[lang];
     if (e) return { url: url(e.path) + '?v=' + Date.parse(e.updated), size: e.size, lang: lang, file: (DOC_NAME[key] || key) + '_' + lang.toUpperCase() + '.pdf' };
