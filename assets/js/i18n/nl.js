@@ -77,7 +77,7 @@ window.IFD_I18N_DICT.nl = {
   },
   footer: {
     quote: '“AI isn’t the future — it’s what we build today.”', studio: 'AI Studio', offices: 'Kantoren',
-    profilePdf: 'Bedrijfsprofiel (PDF)', hq: 'Bodegraven, Nederland · Hoofdkantoor', eng: 'Nha Trang, Khánh Hòa · Vietnam',
+    profilePdf: 'Bedrijfsprofiel', hq: 'Bodegraven, Nederland · Hoofdkantoor', eng: 'Nha Trang, Khánh Hòa · Vietnam',
     us: 'Garden Grove, Californië · VS',
     copy: '© 2026 Infodation AI Studio',
     cyber: 'Deelnemer aan het Cyber Verification Program van Anthropic (Defense Access, 10/2026), met Claude Mythos 5.1 voor defensieve cybersecurity.',
