@@ -53,7 +53,7 @@
       '<a href="' + url('solutions.html') + '" data-i18n="nav.solutions"></a>' +
       '<a href="' + url('technologies.html') + '" data-i18n="nav.tech"></a>' +
       '<a href="' + url('index.html#profile') + '" data-i18n="footer.profilePdf"></a>' +
-      '<a href="' + S.website + '">www.infodation.com</a></div>' +
+      '<a href="' + S.website + '">www.infodation.ai</a></div>' +
       '<div class="fcol"><span class="fcol-h" data-i18n="footer.offices"></span><span data-i18n="footer.hq"></span><span data-i18n="footer.eng"></span><span data-i18n="footer.us"></span></div>' +
       '</div></div>' +
       '<div class="wrap bottom"><span data-i18n="footer.copy"></span><span data-i18n="footer.cyber"></span></div></footer>';

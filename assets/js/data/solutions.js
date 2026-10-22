@@ -19,7 +19,7 @@ window.IFD_SITE = {
   email: 'sales@infodation.com',
   phone: '(+84) 2583 526 477', phoneHref: 'tel:+842583526477',
   companyPdf: 'assets/docs/Infodation-Vietnam_Company-profile.pdf',
-  website: 'https://www.infodation.com',
+  website: 'https://www.infodation.ai',
   partners: ['Microsoft TAP Partner', 'Autodesk Developer Network'],
   certs: ['ISO/IEC 27001:2022', 'ICTWaarborg', 'SBB Accredited', 'Scrum Maturity Level 3'],
   // Logo khách hàng (assets/img/clients/<logo>), theo đúng thứ tự: hàng trên rồi hàng dưới

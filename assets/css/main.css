@@ -706,3 +706,21 @@ form input:focus, form select:focus, form textarea:focus { outline: none; border
   .dl { padding: 26px; }
   .controls { top: 61px; }
 }
+
+/* Solution pages: footer in the same tone as that page's header */
+body[data-solution="intellicad"] .footer { background: var(--bp); --on-ink-1: var(--bp-m1); --on-ink-3: var(--bp-m3); }
+body[data-solution="intellicad"] .footer .bottom { border-top-color: rgba(140,175,220,.16); }
+body[data-solution="document-ai"] .footer { background: #1F2428; --on-ink-1: #CDD2D6; --on-ink-3: #9EA5AB; }
+body[data-solution="document-ai"] .footer .bottom { border-top-color: rgba(221,242,71,.18); }
+body[data-solution="document-ai"] .footer .studio-tag { color: #1F2428; background: #DDF247; }
+body[data-solution="voice-bot"] .footer { background: #1B1838; --on-ink-1: #CFCBEB; --on-ink-3: #A39DCB; }
+body[data-solution="voice-bot"] .footer .bottom { border-top-color: rgba(106,84,240,.32); }
+body[data-solution="voice-bot"] .footer .studio-tag { color: #1B1838; background: #4FD6E8; }
+
+/* Footer links: same hover underline as the header menu (colour follows each page's header) */
+.fcol a { position: relative; align-self: flex-start; transition: color .25s ease; }
+.fcol a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; border-radius: 2px; background: var(--ful, var(--accent)); scale: 0 1; transform-origin: left center; transition: scale .35s cubic-bezier(.2,.7,.2,1); }
+.fcol a:hover::after, .fcol a:focus-visible::after { scale: 1 1; }
+body[data-solution="document-ai"] .footer { --ful: #DDF247; }
+body[data-solution="voice-bot"] .footer { --ful: #4FD6E8; }
+@media (prefers-reduced-motion: reduce) { .fcol a::after { transition: none; } }
