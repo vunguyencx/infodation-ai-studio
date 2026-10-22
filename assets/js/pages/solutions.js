@@ -19,18 +19,24 @@
     }) || norm(I.tx(k + 'name')).indexOf(q) !== -1;
   }
 
-  function card(s) {
-    var k = 'sol.' + s.slug + '.', dark = !!s.demo;
+  // design v2: every card is white; solutions with their own page get a brand bar, the "Try it now" badge and
+  // "View details & demo", the others invite a conversation
+  var anim = 'ga', lastKey = '';
+  function card(s, i) {
+    var k = 'sol.' + s.slug + '.', page = !!s.page;
     var metric = s.metric
       ? '<span class="chip"><strong>' + s.metric + '</strong><span class="chip-lab">' + t(k + 'metricLab') + '</span></span>'
       : '<span class="pending">' + t('common.metricsPending') + '</span>';
-    return '<article class="card tall lift' + (dark ? ' dark' : '') + '" data-asm="piece" data-tilt="6">' +
+    return '<article class="card tall lift" style="--i:' + i + '" data-tilt="4">' +
+      (page ? '<span class="brand-bar" aria-hidden="true" style="background:' + s.brand + '"></span>' : '') +
       '<div class="meta"><span class="num">' + s.n + '</span>' + t(k + 'tag') +
-      (dark ? '<span class="pill-live">' + t('common.tryNow') + '</span>' : '') + '</div>' +
+      (page ? '<span class="pill-live">' + t('common.tryNow') + '</span>' : '') + '</div>' +
       '<h2>' + t(k + 'name') + '</h2>' +
       '<p class="card-pain">' + t(k + 'pain') + '</p>' +
       '<div class="card-foot">' + metric +
-      '<a class="card-cta card-link" href="' + U.solUrl(s.slug) + '">' + t(dark ? 'common.viewDetailsDemo' : 'common.viewDetails') + '</a></div></article>';
+      (page ? '<a class="card-cta card-link" href="' + U.solUrl(s.slug) + '">' + t('common.viewDetailsDemo') + '</a>'
+        : '<a class="card-cta card-link" href="' + U.url('index.html#contact') + '">' + t('common.bookChat') + '</a>') +
+      '</div></article>';
   }
 
   function render() {
@@ -39,6 +45,10 @@
       return '<button type="button" data-ind="' + c + '" aria-pressed="' + (state.ind === c) + '">' + t('market.filters.' + c) + ' <span>' + n + '</span></button>';
     }).join('');
     var shown = SOL.filter(function (s) { return matchInd(s, state.ind) && matchQ(s); });
+    // re-run the card entrance animation whenever the filter/search result changes
+    var key = state.ind + '|' + state.q;
+    if (key !== lastKey) { anim = anim === 'ga' ? 'gb' : 'ga'; lastKey = key; }
+    $('grid').className = 'grid-fill ' + anim;
     $('grid').innerHTML = shown.map(card).join('');
     $('grid').hidden = !shown.length;
     $('count').textContent = I.tx('market.count', { a: shown.length, b: SOL.length });

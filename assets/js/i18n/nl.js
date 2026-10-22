@@ -13,6 +13,7 @@ window.IFD_I18N_DICT.nl = {
     back: '← Ontdek oplossingen', demoLink: 'Demo', solProfile: 'Oplossingsprofiel', book60: 'Plan 60 minuten', detailNav: 'Navigatie oplossing'
   },
   common: {
+    bookChat: 'Plan een gesprek →',
     viewDetails: 'Bekijk details →', viewDetailsDemo: 'Bekijk details & demo →', tryNow: 'Probeer het nu',
     metricsPending: 'Cijfers worden bijgewerkt', pdf: 'Oplossingsprofiel (PDF)', illustrative: 'voorbeelddata'
   },
@@ -50,7 +51,7 @@ window.IFD_I18N_DICT.nl = {
   profile: {
     eyebrow: 'Over Infodation',
     title: '17 jaar software bouwen<br>voor <span class="hl">de Europese markt.</span>',
-    lead: 'Infodation heeft zijn hoofdkantoor in Nederland, een ontwikkelcentrum in Nha Trang, Vietnam en een nieuw kantoor in Californië, VS. AI Studio is op datzelfde fundament gebouwd.',
+    lead: 'Infodation heeft zijn hoofdkantoor in Nederland, een ontwikkelcentrum in Nha Trang en een kantoor in de VS. AI Studio is op datzelfde fundament gebouwd.',
     cardTitle: 'Bedrijfsprofiel<br>Infodation Vietnam',
     cardText: 'Technologische capaciteiten, partners, toonaangevende projecten in Europa &amp; de VS, ISO/IEC 27001-certificering.',
     coverAlt: 'Omslag van het bedrijfsprofiel van Infodation Vietnam',
@@ -77,7 +78,7 @@ window.IFD_I18N_DICT.nl = {
   footer: {
     quote: '“AI isn’t the future — it’s what we build today.”', studio: 'AI Studio', offices: 'Kantoren',
     profilePdf: 'Bedrijfsprofiel (PDF)', hq: 'Bodegraven, Nederland · Hoofdkantoor', eng: 'Nha Trang, Khánh Hòa · Engineering',
-    us: 'Garden Grove, Californië, VS · Kantoor VS',
+    us: 'Garden Grove, Californië · VS',
     copy: '© 2026 Infodation AI Studio',
     cyber: 'Deelnemer aan het Cyber Verification Program van Anthropic (Defense Access, 10/2026), met Claude Mythos 5.1 voor defensieve cybersecurity.',
     admin: 'Beheerinstellingen'
@@ -126,15 +127,17 @@ window.IFD_I18N_DICT.nl = {
     ctaLead: 'Een gesprek van 60 minuten om uw huidige proces te begrijpen.<span>Daarna stuurt Infodation een pilotvoorstel met scope, succescriteria en concrete kosten.</span>',
     roleC: 'VP OF COMMERCIAL', roleD: 'VP OF DELIVERY',
     formTitle: 'Plan 60 minuten', interest: 'Waar bent u in geïnteresseerd', submit: 'Verstuur aanvraag →',
+    emailT: 'E-MAIL', phoneT: 'TELEFOON',
     ndaNote: 'Wij tekenen een NDA voordat wij data ontvangen.', subject: 'Demo-aanvraag'
   },
   sol: {
     intellicad: {
+      formName: 'IntelliCAD — bouwtekeningen',
       name: 'IntelliCAD', tag: 'Bouw', pain: 'Redlines, hoeveelheden uittrekken en 3D uit 2D-tekeningen nog met de hand, blad voor blad.',
       metricLab: 'minder controletijd', field: 'Bouw · BIM', code: 'A-101 · 2D → 3D',
       sub: 'AI-gedreven automatisering<br>van ontwerptekeningen', lead: 'Zodat ontwerpteams hun tijd aan creatief werk besteden, in plaats van aan repetitieve handelingen.',
       tools: 'AutoCAD · Revit · MicroStation',
-      sumTitle: 'Ontwerp en bouw draaien<br>nog op repetitief werk.', sumLead: 'Tijdrovend en foutgevoelig.<span>IntelliCAD combineert AI met Autodesk en Bentley om dit werk te automatiseren.</span>',
+      sumTitle: 'Ontwerp en bouw draaien<br>nog op repetitief werk.', sumLead: 'Tijdrovend en foutgevoelig.<span>IntelliCAD combineert AI met Autodesk om dit werk te automatiseren.</span>',
       tasks: [
         { sheet: 'R-01 · REDLINE', t: 'Verwerking van redline-markups', x: 'Past redline-wijzigingen uit tekeningen automatisch toe in het Revit-model.' },
         { sheet: 'T-02 · DOCUMENTEN', t: 'Analyse van technische documenten', x: 'Haalt informatie uit tekeningen, bestekken en projectdossiers en vergelijkt die.' },
@@ -170,8 +173,10 @@ window.IFD_I18N_DICT.nl = {
       }
     },
     'document-ai': {
-      name: 'Slimme documentdigitalisering', tag: 'Financiën & boekhouding', pain: 'Facturen en bonnen worden nog regel voor regel overgetikt.',
-      metricLab: 'nauwkeurigheid', heroLab: 'extractienauwkeurigheid', field: 'Financiën · ERP', code: 'INV-0042 · OCR → ERP',
+      formName: 'IntelliDOC — documenten & facturen',
+      heroName: 'Documentdigitalisering',
+      name: 'Documentdigitalisering', tag: 'Financiën & boekhouding', pain: 'Facturen en bonnen worden nog regel voor regel overgetikt.',
+      metricLab: 'sneller per factuur', heroLab: 'sneller per factuur', field: 'Financiën · ERP', code: 'INV-0042 · OCR → ERP',
       sub: 'Facturen en documenten<br>gelezen, gecontroleerd, geboekt', lead: 'Haalt gegevens uit facturen en documenten met 99%+ nauwkeurigheid en synchroniseert ze direct naar uw ERP/CRM.',
       tools: 'PDF · SCAN · E-MAIL → ERP / CRM',
       sumTitle: 'Finance tikt nog steeds over<br>wat al op papier staat.', sumLead: 'Elke regel die met de hand wordt ingevoerd, is een kans op fouten.<span>De AI leest elk document, controleert het tegen uw regels en boekt het in uw systeem.</span>',
@@ -199,8 +204,10 @@ window.IFD_I18N_DICT.nl = {
       }
     },
     'voice-bot': {
-      name: 'AI Voice Bot-assistent', tag: 'Service & klantenservice', pain: 'De receptie is overbelast, oproepen na werktijd worden gemist.',
-      metricLab: 'lager callcenterbudget', field: 'Service · Klantenservice', code: 'CALL-24/7 · VOICE → CRM',
+      formName: 'IntelliCALL — AI-spraakassistent',
+      heroName: 'AI-spraakassistent', heroLab: 'elk gesprek beantwoord, meertalig', cardLab: 'elk gesprek beantwoord',
+      name: 'AI-spraakassistent', tag: 'Service & klantenservice', pain: 'De receptie is overbelast, oproepen na werktijd worden gemist.',
+      metricLab: 'elk gesprek beantwoord', field: 'Service · Klantenservice', code: 'CALL-24/7 · VOICE → CRM',
       sub: 'Een stem die antwoordt,<br>dag en nacht', lead: 'Luistert, begrijpt en reageert direct, de klok rond — en verlaagt het callcenterbudget met 40–60%.',
       tools: 'TELEFOON · WEB · CRM · AGENDA',
       sumTitle: 'Elke gemiste oproep<br>is een gemiste klant.', sumLead: 'Pieken, avonden en weekenden overbelasten de receptie.<span>De voicebot handelt routinegesprekken af en geeft complexe gesprekken met volledige context door aan uw team.</span>',

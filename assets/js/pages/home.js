@@ -9,10 +9,10 @@
       var s = SOL.filter(function (x) { return x.hero && x.hero.cls === cls; })[0];
       var k = 'sol.' + s.slug + '.';
       var lab = t(k + 'heroLab') || t(k + 'metricLab');
-      return '<a href="' + U.solUrl(s.slug) + '" class="scard ' + cls + '">' +
+      return '<a href="' + (s.page ? U.solUrl(s.slug) : '#solutions') + '" class="scard ' + cls + '">' +
         '<div class="scard-top"><span>' + t(s.hero.tagKey || k + 'tag') + '</span>' +
         '<span class="scard-status"><span class="dot' + (s.hero.ring ? ' ring' : '') + '"></span>' + t('status.' + s.hero.status) + '</span></div>' +
-        '<span class="scard-name">' + t(k + 'name') + '</span>' +
+        '<span class="scard-name">' + (t(k + 'heroName') || t(k + 'name')) + '</span>' +
         '<div class="scard-metric"><span class="scard-v">' + s.metric + '</span><span class="scard-lab">' + lab + '</span></div></a>';
     });
     cards.push('<a href="solutions.html" class="btn btn-live btn-sm stack-more">' + t('hero.more', { n: SOL.length - 4 }) + '</a>');
@@ -34,17 +34,22 @@
     $('marquee').innerHTML = '<div class="mq-set">' + set + '</div><div class="mq-set" aria-hidden="true">' + set + '</div>';
   }
 
+  // home cards: solutions with a live demo get the "Try it now" badge and link to their page;
+  // the others invite a conversation instead
   function card(s) {
-    var k = 'sol.' + s.slug + '.';
-    var metric = s.metric
-      ? '<span class="chip"><strong>' + s.metric + '</strong><span class="chip-lab">' + t(k + 'metricLab') + '</span></span>'
+    var k = 'sol.' + s.slug + '.', demo = !!s.page;
+    var m = s.metric, lab = t(k + 'metricLab');
+    var metric = m
+      ? '<span class="chip"><strong>' + m + '</strong><span class="chip-lab">' + lab + '</span></span>'
       : '<span class="pending">' + t('common.metricsPending') + '</span>';
+    var cta = demo
+      ? '<a class="card-cta card-link" href="' + U.solUrl(s.slug) + '">' + t('common.viewDetailsDemo') + '</a>'
+      : '<a class="card-cta card-link" href="#contact">' + t('common.bookChat') + '</a>';
     return '<article class="card lift" data-asm="piece" data-tilt="6">' +
-      '<div class="meta"><span class="num">' + s.n + '</span>' + t(k + 'tag') + '</div>' +
-      '<h3>' + t(k + 'name') + '</h3>' +
+      '<div class="meta"><span class="num">' + s.n + '</span>' + t(k + 'tag') + (demo ? '<span class="pill-live">' + t('common.tryNow') + '</span>' : '') + '</div>' +
+      '<h3>' + (t(k + 'heroName') || t(k + 'name')) + '</h3>' +
       '<p class="card-pain">' + t(k + 'pain') + '</p>' +
-      '<div class="card-foot">' + metric +
-      '<a class="card-cta card-link" href="' + U.solUrl(s.slug) + '">' + t('common.viewDetails') + '</a></div></article>';
+      '<div class="card-foot stacked">' + metric + cta + '</div></article>';
   }
 
   function cards() {
@@ -79,15 +84,16 @@
     $('certs').innerHTML = S.certs.map(function (c, i) {
       return '<div class="cert" data-asm="flip"><span data-icon="shield"></span><div style="display:flex;flex-direction:column;gap:2px"><span class="cert-n">' + esc(c) + '</span><span class="cert-s">' + subs[i] + '</span></div></div>';
     }).join('');
-    $('clients').innerHTML = S.clients.map(function (c) { return '<div data-asm="unfold">' + esc(c) + '</div>'; }).join('') +
+    $('clients').innerHTML = (S.clientLogos || []).map(function (c) {
+      return '<div class="logo" data-logo="' + c.logo.replace(/\.\w+$/, '') + '" data-asm="unfold"><img src="' + U.ROOT + 'assets/img/clients/' + c.logo + '" alt="' + esc(c.name) + '" decoding="async"></div>';
+    }).join('') + S.clients.map(function (c) { return '<div data-asm="unfold">' + esc(c) + '</div>'; }).join('') +
       '<div class="more" data-asm="unfold">' + t('profile.more') + '</div>';
   }
 
   function form() {
     var sel = $('problem-select'), keep = sel.selectedIndex;
     sel.innerHTML = SOL.map(function (s) {
-      var name = I.tx('sol.' + s.slug + '.name');
-      if (s.slug === 'intellicad') name += ' — ' + I.tx('sol.intellicad.field');
+      var name = I.tx('sol.' + s.slug + '.formName') || I.tx('sol.' + s.slug + '.name');
       return '<option>' + esc(name) + '</option>';
     }).join('') + '<option>' + esc(I.tx('contact.other')) + '</option>';
     if (keep > 0) sel.selectedIndex = keep;
@@ -100,7 +106,30 @@
     });
   }
 
+  // hero stats count up from 0 ("100+", "14 days") while the intro plays — first load only
+  var counted = false;
+  function countUp() {
+    if (counted || window.IFD_MOTION.reduce) return;
+    counted = true;
+    document.querySelectorAll('.stats .stat-v').forEach(function (el) {
+      var m = el.textContent.match(/^(\D*)(\d+)(.*)$/);
+      if (!m || /ISO/.test(el.textContent)) return;
+      var end = +m[2], t0 = performance.now() + 380, dur = 1500;
+      el.textContent = m[1] + '0' + m[3];
+      var done = false, finish = function () { if (!done) { done = true; el.innerHTML = t(el.getAttribute('data-i18n')); } };
+      setTimeout(finish, 380 + dur + 300); // safety net if animation frames are paused (background tab)
+      (function step(now) {
+        var p = Math.min(1, Math.max(0, (now - t0) / dur)), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = m[1] + Math.round(end * e) + m[3];
+        if (p < 1) requestAnimationFrame(step);
+        else finish(); // final text in the current language
+      })(performance.now());
+    });
+  }
+
+
   (window.IFD_RENDERS = window.IFD_RENDERS || []).push(function () {
     counts(); heroStack(); marquee(); cards(); steps(); profile(); form();
+    setTimeout(countUp, 0); // after i18n has filled the stat values
   });
 })();

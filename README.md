@@ -17,6 +17,8 @@ Mở http://localhost:5173. Mở file `index.html` trực tiếp cũng chạy đ
 | `index.html` | Trang chủ |
 | `solutions.html` | Khám phá giải pháp (tìm kiếm + lọc theo ngành, giữ trạng thái trên URL `?ind=&q=`) |
 | `solutions/<slug>.html` | Trang con riêng cho từng giải pháp, kèm demo tương tác |
+| `solutions/document-ai.html`, `solutions/voice-bot.html` | IntelliDOC và IntelliCALL — trang thiết kế riêng (`assets/js/pages/intellidoc.js`, `intellicall.js` + CSS/i18n cùng tên); generator bỏ qua 2 trang này |
+| `assets/js/reveal.js` | Hiệu ứng hiện dần khi cuộn (`data-reveal`), đếm số (`data-count`) theo design v2 |
 | `technologies.html` | Công nghệ: stack 3D, sơ đồ luồng dữ liệu, 6 cụm năng lực, ma trận cụm ↔ giải pháp, nguyên tắc kỹ thuật (nội dung trong `assets/js/i18n/tech.js`) |
 | `admin.html` | Cài đặt quản trị: combo màu + ngôn ngữ mặc định |
 | `assets/js/palettes.js` | 6 combo màu (mỗi combo 5 màu chính) |

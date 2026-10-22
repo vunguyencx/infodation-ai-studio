@@ -51,7 +51,7 @@
       '<div class="fcol"><span class="fcol-h" data-i18n="footer.studio"></span>' +
       '<a href="' + url('solutions.html') + '" data-i18n="nav.solutions"></a>' +
       '<a href="' + url('technologies.html') + '" data-i18n="nav.tech"></a>' +
-      '<a data-doc="company-profile" target="_blank" rel="noopener" data-i18n="footer.profilePdf"></a>' +
+      '<a href="' + url('index.html#profile') + '" data-i18n="footer.profilePdf"></a>' +
       '<a href="' + S.website + '">www.infodation.com</a></div>' +
       '<div class="fcol"><span class="fcol-h" data-i18n="footer.offices"></span><span data-i18n="footer.hq"></span><span data-i18n="footer.eng"></span><span data-i18n="footer.us"></span></div>' +
       '</div></div>' +
@@ -77,6 +77,19 @@
     addEventListener('scroll', check, { passive: true });
     addEventListener('resize', check);
     check();
+  }
+  function arrows(root) {
+    (root || document).querySelectorAll('a, button').forEach(function (el) {
+      if (el.querySelector('.arw')) return;
+      var n = el.lastChild;
+      while (n && n.nodeType === 1 && !n.classList.contains('arw') && n.namespaceURI === 'http://www.w3.org/1999/xhtml') n = n.lastChild;
+      if (!n || n.nodeType !== 3) return;
+      var m = n.textContent.match(/^([\s\S]*?)\s*([→↓])\s*$/);
+      if (!m) return;
+      n.textContent = m[1] + ' ';
+      var a = document.createElement('span'); a.className = 'arw'; a.setAttribute('aria-hidden', 'true'); a.textContent = m[2];
+      n.parentNode.insertBefore(a, n.nextSibling);
+    });
   }
   function icons(root) {
     root.querySelectorAll('[data-icon]').forEach(function (el) {
@@ -126,7 +139,7 @@
   /* Documents uploaded in admin → assets/js/docs.js. Each key has one PDF per language;
    * visitors get the file in the page language, else the English one, else the built-in default. */
   var DOC_DEFAULT = { 'company-profile': S.companyPdf, 'intellicad': 'assets/docs/IntelliCAD_Solution-profile.pdf' };
-  var DOC_NAME = { 'company-profile': 'Infodation_Company-profile', 'intellicad': 'IntelliCAD_Solution-profile', 'document-ai': 'Smart-document-digitisation_Solution-profile', 'voice-bot': 'AI-Voice-Bot_Solution-profile' };
+  var DOC_NAME = { 'company-profile': 'Infodation_Company-profile', 'intellicad': 'IntelliCAD_Solution-profile', 'document-ai': 'IntelliDOC_Solution-profile', 'voice-bot': 'IntelliCALL_Solution-profile' };
   function doc(key) {
     var d = (window.IFD_DOCS || {})[key] || {}, lang = d[I.lang] ? I.lang : 'en', e = d[lang];
     if (e) return { url: url(e.path) + '?v=' + Date.parse(e.updated), size: e.size, lang: lang, file: (DOC_NAME[key] || key) + '_' + lang.toUpperCase() + '.pdf' };
@@ -154,5 +167,5 @@
     });
   }
 
-  window.IFD_UI = { ROOT: ROOT, ICON: ICON, esc: esc, url: url, solUrl: solUrl, mount: mount, icons: icons, doc: doc, docs: docs, bindMailForm: bindMailForm };
+  window.IFD_UI = { ROOT: ROOT, ICON: ICON, esc: esc, url: url, solUrl: solUrl, mount: mount, icons: icons, arrows: arrows, doc: doc, docs: docs, bindMailForm: bindMailForm };
 })();

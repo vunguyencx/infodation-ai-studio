@@ -9,7 +9,10 @@ const sols = ctx.window.IFD_SOLUTIONS, en = ctx.window.IFD_I18N_DICT.en;
 const strip = (s) => String(s).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 
 fs.mkdirSync(path.join(root, 'solutions'), { recursive: true });
+// IntelliDOC (document-ai) and IntelliCALL (voice-bot) have their own hand-built pages
+const CUSTOM = ['document-ai', 'voice-bot'];
 for (const s of sols) {
+  if (CUSTOM.includes(s.slug)) continue;
   const d = en.sol[s.slug];
   const html = `<!DOCTYPE html>
 <html lang="en" data-root="../">
@@ -40,6 +43,7 @@ for (const s of sols) {
 <script src="../assets/js/docs.js"></script>
 <script src="../assets/js/layout.js"></script>
 <script src="../assets/js/motion.js"></script>
+<script src="../assets/js/reveal.js"></script>
 <script src="../assets/js/pages/demos.js"></script>
 <script src="../assets/js/pages/detail.js"></script>
 <script src="../assets/js/app.js"></script>

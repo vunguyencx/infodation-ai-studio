@@ -52,19 +52,27 @@
 
   /* ---------- hero drawings ---------- */
   var HERO = {
-    intellicad: function (floors) {
-      var m = iso({ s: 12, cx: 430, cy: 262, floors: floors == null ? 9 : floors });
-      return '<svg viewBox="0 0 540 380" role="img" aria-label="' + I.tx('sol.intellicad.demo.figAria') + '" data-hero-build>' +
-        '<g stroke="#5E86C9" stroke-width="1" fill="none"><line x1="20" y1="96" x2="130" y2="96"/><line x1="130" y1="96" x2="220" y2="96"/><line x1="20" y1="90" x2="20" y2="102"/><line x1="130" y1="90" x2="130" y2="102"/><line x1="220" y1="90" x2="220" y2="102"/><line x1="4" y1="120" x2="4" y2="270"/><line x1="-2" y1="120" x2="10" y2="120"/><line x1="-2" y1="270" x2="10" y2="270"/></g>' +
-        '<text x="75" y="88" fill="#F5B13D" ' + MONO + ' font-size="11" text-anchor="middle">5 200</text><text x="175" y="88" fill="#F5B13D" ' + MONO + ' font-size="11" text-anchor="middle">3 000</text>' +
-        '<g stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="square" class="draw"><rect x="20" y="120" width="200" height="150" pathLength="1"/><line x1="130" y1="120" x2="130" y2="200" pathLength="1"/><line x1="20" y1="200" x2="220" y2="200" pathLength="1"/><line x1="95" y1="200" x2="95" y2="270" pathLength="1"/></g>' +
-        '<g stroke="#8FB3E8" stroke-width="1.2" fill="none"><path d="M130 165 A 22 22 0 0 0 108 187"/><path d="M95 235 A 18 18 0 0 1 113 253"/></g>' +
-        '<circle cx="168" cy="236" r="22" ' + ACCS + ' stroke-width="2.4" fill="none" stroke-dasharray="7 4"/>' +
-        '<text x="168" y="241" ' + ACC + ' ' + MONO + ' font-size="13" font-weight="700" text-anchor="middle">R1</text>' +
-        '<text x="20" y="298" fill="#A7B6C6" ' + MONO + ' font-size="11">A-101 · 2D</text>' +
-        arrowAI(242, 312, 195) +
-        '<g id="hero-building">' + building(m, 1.6) + '</g>' +
-        '<text x="430" y="372" fill="#A7B6C6" ' + MONO + ' font-size="11" text-anchor="middle">3D · LOD 300</text></svg>';
+    // design v2 sequence: plan walls draw in → dimensions fade → AI arrow flows → building rises → corners pop
+    intellicad: function () {
+      var m = iso({ s: 12, cx: 430, cy: 262, floors: 9 });
+      var d = function (ms) { return ' style="--d:' + ms + 'ms"'; };
+      return '<svg viewBox="0 0 540 380" role="img" aria-label="' + I.tx('sol.intellicad.demo.figAria') + '">' +
+        '<g class="dfade"' + d(1100) + ' stroke="#5E86C9" stroke-width="1" fill="none"><line x1="20" y1="96" x2="130" y2="96"/><line x1="130" y1="96" x2="220" y2="96"/><line x1="20" y1="90" x2="20" y2="102"/><line x1="130" y1="90" x2="130" y2="102"/><line x1="220" y1="90" x2="220" y2="102"/><line x1="4" y1="120" x2="4" y2="270"/><line x1="-2" y1="120" x2="10" y2="120"/><line x1="-2" y1="270" x2="10" y2="270"/></g>' +
+        '<text class="dfade"' + d(1200) + ' x="75" y="88" fill="#F5B13D" ' + MONO + ' font-size="11" text-anchor="middle">5 200</text><text class="dfade"' + d(1250) + ' x="175" y="88" fill="#F5B13D" ' + MONO + ' font-size="11" text-anchor="middle">3 000</text>' +
+        '<g stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="square">' +
+        '<path class="dd"' + d(300) + ' pathLength="1" d="M20 120 H220 V270 H20 Z"/><path class="dd"' + d(650) + ' pathLength="1" d="M130 120 V200"/>' +
+        '<path class="dd"' + d(750) + ' pathLength="1" d="M20 200 H220"/><path class="dd"' + d(850) + ' pathLength="1" d="M95 200 V270"/></g>' +
+        '<g stroke="#8FB3E8" stroke-width="1.2" fill="none"><path class="dd"' + d(1000) + ' pathLength="1" d="M130 165 A 22 22 0 0 0 108 187"/><path class="dd"' + d(1050) + ' pathLength="1" d="M95 235 A 18 18 0 0 1 113 253"/></g>' +
+        '<circle class="dspin" cx="168" cy="236" r="22" ' + ACCS + ' stroke-width="2.4" fill="none" stroke-dasharray="7 4"/>' +
+        '<text class="dfade"' + d(950) + ' x="168" y="241" ' + ACC + ' ' + MONO + ' font-size="13" font-weight="700" text-anchor="middle">R1</text>' +
+        '<text class="dfade"' + d(1200) + ' x="20" y="298" fill="#A7B6C6" ' + MONO + ' font-size="11">A-101 · 2D</text>' +
+        '<line class="dflow" x1="242" y1="195" x2="300" y2="195" stroke="#F5B13D" stroke-width="2.4" stroke-dasharray="6 5"/>' +
+        '<path class="dfade"' + d(1150) + ' d="M298 186 L312 195 L298 204 Z" fill="#F5B13D"/>' +
+        '<text class="dfade"' + d(1100) + ' x="268" y="180" fill="#F5B13D" ' + MONO + ' font-size="15" font-weight="700" text-anchor="middle">AI</text>' +
+        '<g class="drise"><polygon points="' + m.front + '" fill="#2443B8" stroke="#FFFFFF" stroke-width="1.6"/><polygon points="' + m.right + '" fill="#1B3489" stroke="#FFFFFF" stroke-width="1.6"/>' +
+        '<polygon points="' + m.top + '" fill="#22354F" stroke="#FFFFFF" stroke-width="1.6"/><path d="' + m.linesD + '" stroke="#7FA2EE" stroke-width="0.8" fill="none"/></g>' +
+        '<path class="dpop" d="' + m.cornersD + '" fill="#F5B13D"/>' +
+        '<text class="dfade"' + d(2200) + ' x="430" y="372" fill="#A7B6C6" ' + MONO + ' font-size="11" text-anchor="middle">3D · LOD 300</text></svg>';
     },
     'document-ai': function () {
       var rows = '';
@@ -178,11 +186,11 @@
     var d = D('intellicad');
     var S = { tab: 0, st: {}, floors: 6, done: false };
     var base = [['D-101', 94], ['A-102', 87], ['A-103', 78], ['S-201', 91], ['W-201', 82], ['A-104', 55]];
-    function render() {
+    function render(paneIn) {
       var tabs = '<div class="tabs" role="tablist" aria-label="' + I.tx('sol.intellicad.demo.tabsLabel') + '">' +
         d('tabs').map(function (l, i) { return '<button type="button" role="tab" aria-selected="' + (S.tab === i) + '" data-act="tab" data-v="' + i + '">' + l + '</button>'; }).join('') + '</div>';
       var body = S.tab === 0 ? redline() : S.tab === 1 ? model() : ui();
-      return tabs + '<div class="demo-body">' + body + '</div>';
+      return tabs + '<div class="demo-body' + (paneIn ? ' pane' : '') + '">' + body + '</div>';
     }
     function redline() {
       var names = d('rows'), approved = 0, rejected = 0;
@@ -225,7 +233,7 @@
     return {
       render: render,
       act: function (a, el, redraw) {
-        if (a === 'tab') { S.tab = +el.getAttribute('data-v'); redraw(); }
+        if (a === 'tab') { S.tab = +el.getAttribute('data-v'); redraw(true); }
         if (a === 'row') { S.st[el.getAttribute('data-i')] = el.getAttribute('data-v'); S.done = false; redraw(); }
         if (a === 'exec') { S.done = true; redraw(); }
       },

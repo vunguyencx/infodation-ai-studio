@@ -19,15 +19,15 @@
 
 <main id="main">
 <section class="wrap m-head">
-  <nav class="crumb intro" style="--i:0" aria-label="Breadcrumb"><a href="index.html">AI Studio</a> / <b data-i18n="market.crumb"></b></nav>
+  <nav class="crumb rise-in" style="--d:0ms" aria-label="Breadcrumb"><a href="index.html">AI Studio</a> / <b data-i18n="market.crumb"></b></nav>
   <div class="sec-head" style="gap:20px 48px">
-    <h1 class="m-h1 intro" style="--i:1" data-i18n="market.title"></h1>
-    <p class="lead intro" style="--i:2;max-width:420px" data-i18n="market.lead" data-i18n-vars='{"n":7}'></p>
+    <h1 class="m-h1 rise-in" style="--d:80ms" data-i18n="market.title"></h1>
+    <p class="lead rise-in" style="--d:170ms;max-width:420px" data-i18n="market.lead" data-i18n-vars='{"n":7}'></p>
   </div>
 </section>
 
 <section class="controls">
-  <div class="wrap inner">
+  <div class="wrap inner rise-in" style="--d:250ms">
     <label class="search">
       <span data-icon="search"></span>
       <input type="search" id="q" data-i18n-attr="placeholder:market.search,aria-label:market.searchAria">
@@ -38,8 +38,8 @@
 
 <section class="wrap results">
   <span class="result-count" id="count" aria-live="polite"></span>
-  <div class="grid-fill asm-stage" id="grid" data-asm-stagger=".07"></div>
-  <div class="custom-cta" data-asm="rise" data-tilt="3">
+  <div class="grid-fill ga" id="grid"></div>
+  <div class="custom-cta" data-reveal>
     <div style="display:flex;flex-direction:column;gap:8px">
       <b data-i18n="market.customT"></b>
       <span data-i18n="market.customX"></span>
@@ -60,6 +60,7 @@
 <script src="assets/js/docs.js"></script>
 <script src="assets/js/layout.js"></script>
 <script src="assets/js/motion.js"></script>
+<script src="assets/js/reveal.js"></script>
 <script src="assets/js/pages/solutions.js"></script>
 <script src="assets/js/app.js"></script>
 </body>

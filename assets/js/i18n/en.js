@@ -13,6 +13,7 @@ window.IFD_I18N_DICT.en = {
     back: '← Explore solutions', demoLink: 'Demo', solProfile: 'Solution profile', book60: 'Book 60 minutes', detailNav: 'Solution navigation'
   },
   common: {
+    bookChat: 'Book a conversation →',
     viewDetails: 'View details →', viewDetailsDemo: 'View details & demo →', tryNow: 'Try it now',
     metricsPending: 'Metrics being updated', pdf: 'Solution profile (PDF)', illustrative: 'illustrative data'
   },
@@ -50,7 +51,7 @@ window.IFD_I18N_DICT.en = {
   profile: {
     eyebrow: 'About Infodation',
     title: '17 years building<br>software for<br><span class="hl">the European market.</span>',
-    lead: 'Infodation is headquartered in the Netherlands, with a development centre in Nha Trang, Vietnam and a new office in California, USA. AI Studio is built on that same foundation.',
+    lead: 'Infodation is headquartered in the Netherlands, with a development centre in Nha Trang and an office in the US. AI Studio is built on that same foundation.',
     cardTitle: 'Company profile<br>Infodation Vietnam',
     cardText: 'Technology capabilities, partners, flagship projects in Europe & the US, ISO/IEC 27001 certification.',
     coverAlt: 'Cover of the Infodation Vietnam company profile',
@@ -77,7 +78,7 @@ window.IFD_I18N_DICT.en = {
   footer: {
     quote: '“AI isn’t the future — it’s what we build today.”', studio: 'AI Studio', offices: 'Offices',
     profilePdf: 'Company profile (PDF)', hq: 'Bodegraven, the Netherlands · Headquarters', eng: 'Nha Trang, Khánh Hòa · Engineering',
-    us: 'Garden Grove, California, USA · US office',
+    us: 'Garden Grove, California · USA',
     copy: '© 2026 Infodation AI Studio',
     cyber: 'Member of Anthropic’s Cyber Verification Program (Defense Access, 10/2026), using Claude Mythos 5.1 for defensive cybersecurity.',
     admin: 'Admin settings'
@@ -126,15 +127,17 @@ window.IFD_I18N_DICT.en = {
     ctaLead: 'A 60-minute conversation to understand your current process.<span>Afterwards, Infodation sends a pilot proposal with scope, success criteria and concrete costs.</span>',
     roleC: 'VP OF COMMERCIAL', roleD: 'VP OF DELIVERY',
     formTitle: 'Book 60 minutes', interest: 'What interests you', submit: 'Send request →',
+    emailT: 'EMAIL', phoneT: 'PHONE',
     ndaNote: 'We sign an NDA before receiving any of your data.', subject: 'Demo request'
   },
   sol: {
     intellicad: {
+      formName: 'IntelliCAD — construction drawings',
       name: 'IntelliCAD', tag: 'Construction', pain: 'Redlines, quantity take-offs and 2D-to-3D modelling still done by hand, sheet by sheet.',
       metricLab: 'less checking time', field: 'Construction · BIM', code: 'A-101 · 2D → 3D',
       sub: 'AI-powered automation<br>for design drawings', lead: 'Lets design teams spend their time on creative work instead of repetitive clicks.',
       tools: 'AutoCAD · Revit · MicroStation',
-      sumTitle: 'Design and construction<br>still runs on repetitive work.', sumLead: 'Time-consuming and error-prone.<span>IntelliCAD combines AI with Autodesk and Bentley tools to automate this work.</span>',
+      sumTitle: 'Design and construction<br>still runs on repetitive work.', sumLead: 'Time-consuming and error-prone.<span>IntelliCAD combines AI with Autodesk tools to automate this work.</span>',
       tasks: [
         { sheet: 'R-01 · REDLINE', t: 'Redline markup processing', x: 'Automatically applies redline edits from drawings to the Revit model.' },
         { sheet: 'T-02 · DOCUMENTS', t: 'Technical document analysis', x: 'Extracts and cross-checks information between drawings, specifications and project files.' },
@@ -170,8 +173,10 @@ window.IFD_I18N_DICT.en = {
       }
     },
     'document-ai': {
-      name: 'Smart document digitisation', tag: 'Finance & accounting', pain: 'Invoices and receipts are still keyed in line by line.',
-      metricLab: 'accuracy', heroLab: 'extraction accuracy', field: 'Finance · ERP', code: 'INV-0042 · OCR → ERP',
+      formName: 'IntelliDOC — documents & invoices',
+      heroName: 'Document digitisation',
+      name: 'Document digitisation', tag: 'Finance & accounting', pain: 'Invoices and receipts are still keyed in line by line.',
+      metricLab: 'faster per invoice', heroLab: 'faster per invoice', field: 'Finance · ERP', code: 'INV-0042 · OCR → ERP',
       sub: 'Invoices and documents<br>read, checked, booked', lead: 'Extracts invoices and documents with 99%+ accuracy and syncs them straight into your ERP/CRM.',
       tools: 'PDF · SCAN · E-MAIL → ERP / CRM',
       sumTitle: 'Finance teams still retype<br>what is already on paper.', sumLead: 'Every line typed by hand is a chance for error.<span>The AI reads each document, checks it against your rules and books it into your system.</span>',
@@ -199,8 +204,10 @@ window.IFD_I18N_DICT.en = {
       }
     },
     'voice-bot': {
-      name: 'AI Voice Bot assistant', tag: 'Service & customer care', pain: 'Receptionists are overloaded, after-hours calls get missed.',
-      metricLab: 'lower call-centre budget', field: 'Service · Customer care', code: 'CALL-24/7 · VOICE → CRM',
+      formName: 'IntelliCALL — AI voice assistant',
+      heroName: 'AI voice assistant', heroLab: 'every call answered, multilingual', cardLab: 'every call answered',
+      name: 'AI voice assistant', tag: 'Service & customer care', pain: 'Receptionists are overloaded, after-hours calls get missed.',
+      metricLab: 'every call answered', field: 'Service · Customer care', code: 'CALL-24/7 · VOICE → CRM',
       sub: 'A voice that answers,<br>day and night', lead: 'Listens, understands and responds instantly around the clock, cutting call-centre budgets by 40–60%.',
       tools: 'PHONE · WEB · CRM · CALENDAR',
       sumTitle: 'Every missed call<br>is a missed customer.', sumLead: 'Peaks, nights and weekends overload the front desk.<span>The voice bot handles routine calls and hands complex ones to your team with full context.</span>',
