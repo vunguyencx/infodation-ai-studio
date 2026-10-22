@@ -279,7 +279,7 @@
     var mail = 'mailto:' + SITE.email + '?subject=' + encodeURIComponent(I.plain(p.mailSubject));
     var btns = has
       ? '<a data-doc="' + SLUG + '" target="_blank" rel="noopener" class="idc-btn idc-btn-accent idc-btn-sm">' + p.view + '</a>' +
-        '<a data-doc="' + SLUG + '" download class="idc-btn idc-btn-ghost idc-btn-sm">' + p.download + '<span data-doc-size="' + SLUG + '"></span></a>'
+        '<a data-doc="' + SLUG + '" download class="idc-btn idc-btn-ghost idc-btn-sm">' + p.download + '</a>'
       : '<a href="' + mail + '" class="idc-btn idc-btn-accent idc-btn-sm">' + p.request + ' <span class="arw" aria-hidden="true">→</span></a>';
     return '<section id="ho-so-giai-phap" class="idc-wrap idc-profile-sec">' +
       '<div class="idc-lift idc-profile" data-reveal>' + cover +

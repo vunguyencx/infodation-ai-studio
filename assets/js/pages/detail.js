@@ -104,7 +104,7 @@
         '<span style="margin-top:auto;height:6px;border-radius:3px;background:var(--accent)"></span></div>';
     var btns = U.doc(slug)
       ? '<a data-doc="' + slug + '" target="_blank" rel="noopener" class="btn btn-accent btn-md">' + t('detail.viewOnline') + '</a>' +
-        '<a data-doc="' + slug + '" download class="btn btn-ghost btn-md" style="padding:12px 20px">' + t('detail.download') + '<span data-doc-size="' + slug + '"></span></a>'
+        '<a data-doc="' + slug + '" download class="btn btn-ghost btn-md" style="padding:12px 20px">' + t('detail.download') + '</a>'
       : '<a href="' + mail + '" class="btn btn-accent btn-md">' + t('detail.request') + '</a>';
     return '<section id="solution-profile" class="wrap" style="padding-top:104px;padding-bottom:104px">' +
       '<div class="dl bp lift" data-reveal>' + cover +

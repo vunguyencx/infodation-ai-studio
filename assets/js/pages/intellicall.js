@@ -218,7 +218,7 @@
     var mail = 'mailto:' + SITE.email + '?subject=' + encodeURIComponent(I.plain(s.mailSubject));
     var btns = has
       ? '<a data-doc="' + SLUG + '" target="_blank" rel="noopener" class="ic-btn ic-btn-accent ic-btn-sm">' + s.view + '</a>' +
-        '<a data-doc="' + SLUG + '" download class="ic-btn ic-btn-ghost ic-btn-sm">' + s.download + '<span data-doc-size="' + SLUG + '"></span></a>'
+        '<a data-doc="' + SLUG + '" download class="ic-btn ic-btn-ghost ic-btn-sm">' + s.download + '</a>'
       : '<a href="' + mail + '" class="ic-btn ic-btn-accent ic-btn-sm">' + s.request + '</a>';
     return '<section id="ho-so-giai-phap" class="ic-profile"><div class="ic-dl lift" data-reveal>' + cover +
       '<div class="ic-dl-copy"><span class="ic-label cy">' + s.label + '</span><h2 class="ic-h2 pf">' + s.title + '</h2>' +

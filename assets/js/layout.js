@@ -147,12 +147,7 @@
     if (DOC_DEFAULT[key]) return { url: url(DOC_DEFAULT[key]), size: 0, lang: 'en', file: (DOC_NAME[key] || key) + '.pdf' };
     return null;
   }
-  function fmtSize(b) {
-    if (!b) return '';
-    var mb = b / 1048576, v = mb >= 1 ? mb.toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB';
-    return I.lang === 'en' ? v : v.replace('.', ',');
-  }
-  // fill every [data-doc] link and [data-doc-size] label on the page
+  // fill every [data-doc] link on the page
   function docs(root) {
     (root || document).querySelectorAll('[data-doc]').forEach(function (el) {
       var d = doc(el.getAttribute('data-doc'));
@@ -161,10 +156,6 @@
       el.setAttribute('href', d.url);
       if (el.hasAttribute('download')) el.setAttribute('download', d.file);
       el.setAttribute('hreflang', d.lang);
-    });
-    (root || document).querySelectorAll('[data-doc-size]').forEach(function (el) {
-      var d = doc(el.getAttribute('data-doc-size')), s = d && fmtSize(d.size);
-      el.textContent = s ? ' · ' + s : '';
     });
   }
 
