@@ -50,7 +50,7 @@ window.IFD_I18N_DICT.en = {
   profile: {
     eyebrow: 'About Infodation',
     title: '17 years building<br>software for<br><span class="hl">the European market.</span>',
-    lead: 'Infodation is headquartered in the Netherlands with a development centre in Nha Trang, Vietnam. AI Studio is built on that same foundation.',
+    lead: 'Infodation is headquartered in the Netherlands, with a development centre in Nha Trang, Vietnam and a new office in California, USA. AI Studio is built on that same foundation.',
     cardTitle: 'Company profile<br>Infodation Vietnam',
     cardText: 'Technology capabilities, partners, flagship projects in Europe & the US, ISO/IEC 27001 certification.',
     coverAlt: 'Cover of the Infodation Vietnam company profile',

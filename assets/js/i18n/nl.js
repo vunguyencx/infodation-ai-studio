@@ -50,7 +50,7 @@ window.IFD_I18N_DICT.nl = {
   profile: {
     eyebrow: 'Over Infodation',
     title: '17 jaar software bouwen<br>voor <span class="hl">de Europese markt.</span>',
-    lead: 'Infodation heeft zijn hoofdkantoor in Nederland en een ontwikkelcentrum in Nha Trang, Vietnam. AI Studio is op datzelfde fundament gebouwd.',
+    lead: 'Infodation heeft zijn hoofdkantoor in Nederland, een ontwikkelcentrum in Nha Trang, Vietnam en een nieuw kantoor in Californië, VS. AI Studio is op datzelfde fundament gebouwd.',
     cardTitle: 'Bedrijfsprofiel<br>Infodation Vietnam',
     cardText: 'Technologische capaciteiten, partners, toonaangevende projecten in Europa &amp; de VS, ISO/IEC 27001-certificering.',
     coverAlt: 'Omslag van het bedrijfsprofiel van Infodation Vietnam',

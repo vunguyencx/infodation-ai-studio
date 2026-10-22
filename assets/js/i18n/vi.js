@@ -50,7 +50,7 @@ window.IFD_I18N_DICT.vi = {
   profile: {
     eyebrow: 'Về Infodation',
     title: '17 năm làm phần mềm<br>cho <span class="hl">thị trường châu Âu.</span>',
-    lead: 'Infodation có trụ sở tại Hà Lan và trung tâm phát triển tại Nha Trang. AI Studio được xây dựng từ chính nền tảng đó.',
+    lead: 'Infodation có trụ sở tại Hà Lan, trung tâm phát triển tại Nha Trang, Việt Nam và văn phòng mới tại California, Mỹ. AI Studio được xây dựng từ chính nền tảng đó.',
     cardTitle: 'Hồ sơ năng lực<br>Infodation Việt Nam',
     cardText: 'Năng lực công nghệ, đối tác, dự án tiêu biểu tại châu Âu &amp; Mỹ, chứng nhận ISO/IEC 27001.',
     coverAlt: 'Bìa Hồ sơ năng lực Infodation Việt Nam',
