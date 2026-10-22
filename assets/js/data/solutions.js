@@ -20,7 +20,7 @@ window.IFD_SITE = {
   phone: '(+84) 25 8352 6477', phoneHref: 'tel:+842583526477',
   companyPdf: 'assets/docs/Infodation-Vietnam_Company-profile.pdf',
   website: 'https://www.infodation.com',
-  partners: ['Microsoft Partner', 'AWS Partner', 'Autodesk Developer Network', 'Bentley Developer Network'],
+  partners: ['Microsoft TAP Partner', 'Autodesk Developer Network'],
   certs: ['ISO/IEC 27001:2022', 'ICTWaarborg', 'SBB Accredited', 'Scrum Maturity Level 3'],
   clients: ['KPN', 'Vodafone', 'Kikker', 'Gridsz', 'Sportpartner', 'TeamsCX', 'Mettler Toledo', 'BAM', 'De Heus'],
   people: [
