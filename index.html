@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-root="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.home">Infodation AI Studio</title>
+<meta name="description" data-i18n-attr="content:meta.desc" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<script src="assets/js/palettes.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/theme.js"></script>
+</head>
+<body>
+<div class="page">
+<div data-layout="header"></div>
+
+<main id="main">
+<!-- HERO -->
+<section id="top" class="wrap hero">
+  <div class="hero-copy">
+    <div class="badge intro" style="--i:0"><span class="dot"></span><span data-i18n="hero.badge" data-i18n-vars='{"n":7}'></span></div>
+    <h1 class="h1 intro" style="--i:1" data-i18n="hero.title"></h1>
+    <p class="hero-lead intro" style="--i:2" data-i18n="hero.lead"></p>
+    <div class="row intro" style="--i:3">
+      <a href="#contact" class="btn btn-accent btn-lg"><span data-i18n="hero.cta"></span><span data-icon="arrow"></span></a>
+      <a href="#solutions" class="btn btn-outline btn-lg" data-i18n="hero.cta2"></a>
+    </div>
+    <div class="stats intro" style="--i:4">
+      <div><div class="stat-v" data-i18n="hero.s1v"></div><div class="stat-l" data-i18n="hero.s1l"></div></div>
+      <div><div class="stat-v" data-i18n="hero.s2v"></div><div class="stat-l" data-i18n="hero.s2l"></div></div>
+      <div><div class="stat-v" data-i18n="hero.s3v"></div><div class="stat-l" data-i18n="hero.s3l"></div></div>
+    </div>
+  </div>
+  <div class="stack" data-stack data-i18n-attr="aria-label:hero.stackLabel" role="group">
+    <div class="stack-inner" id="hero-stack"></div>
+  </div>
+</section>
+
+<!-- INDUSTRY MARQUEE -->
+<section class="mq" data-i18n-attr="aria-label:industriesLabel" data-asm="unfold" data-asm-start="1.05" data-asm-end=".8">
+  <div class="mq-track" id="marquee"></div>
+</section>
+
+<!-- PROBLEM → SOLUTION -->
+<section id="solutions" class="wrap sec">
+  <div class="sec-head">
+    <h2 class="h2" data-split data-i18n="problem.title"></h2>
+    <p class="lead" data-asm="right" data-i18n="problem.lead"></p>
+  </div>
+  <div class="grid-cards asm-stage" id="home-cards" data-asm-stagger=".09"></div>
+  <div class="bar-cta" data-asm="rise">
+    <span data-i18n="problem.seeAll" data-i18n-vars='{"n":7}'></span>
+    <a href="solutions.html" class="btn btn-ink btn-md" data-i18n="problem.explore"></a>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="how" class="band-white">
+  <div class="wrap sec" style="gap:56px">
+    <div class="sec-head">
+      <h2 class="h2" data-split data-i18n="how.title"></h2>
+      <p class="lead" style="max-width:420px;flex:1 1 340px" data-asm="right" data-i18n="how.lead"></p>
+    </div>
+    <ol class="steps asm-stage" id="steps" data-asm-stagger=".1"></ol>
+  </div>
+</section>
+
+<!-- COMPANY PROFILE -->
+<section id="profile" class="wrap sec">
+  <div class="profile-row">
+    <div class="profile-copy">
+      <span class="eyebrow" data-asm="rise" data-i18n="profile.eyebrow"></span>
+      <h2 class="h2" data-split data-i18n="profile.title"></h2>
+      <p data-asm="rise" data-i18n="profile.lead"></p>
+      <div class="partners asm-stage" id="partners" data-asm-stagger=".07"></div>
+    </div>
+    <div class="doc-card lift" data-asm="right" data-tilt="5">
+      <a class="doc-cover" id="doc-cover" data-doc="company-profile" target="_blank" rel="noopener" data-asm="book" data-asm-delay=".25">
+        <img src="assets/img/company-profile-cover.jpg" width="170" height="240" data-i18n-attr="alt:profile.coverAlt" alt="">
+      </a>
+      <div class="doc-copy">
+        <span class="doc-title" data-i18n="profile.cardTitle"></span>
+        <span class="doc-text" data-i18n="profile.cardText"></span>
+        <div class="row" style="gap:10px;padding-top:4px">
+          <a class="btn btn-accent btn-sm" id="doc-view" data-doc="company-profile" target="_blank" rel="noopener" data-i18n="profile.viewOnline"></a>
+          <a class="btn btn-ghost btn-sm" id="doc-dl" data-doc="company-profile" download><span data-i18n="profile.download"></span><span data-doc-size="company-profile"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offices asm-stage" data-asm-stagger=".22">
+    <div class="office" data-asm="swingL" data-asm-end=".55"><span data-icon="pin"></span><div><div class="office-n" data-i18n="how.o1n"></div><div class="office-s" data-i18n="how.o1s"></div></div></div>
+    <div class="office" data-asm="zoom" data-asm-end=".55"><span data-icon="pin"></span><div><div class="office-n" data-i18n="how.o2n"></div><div class="office-s" data-i18n="how.o2s"></div></div></div>
+    <div class="office" data-asm="swing" data-asm-end=".55"><span data-icon="pin"></span><div><div class="office-n" data-i18n="how.o3n"></div><div class="office-s" data-i18n="how.o3s"></div></div></div>
+  </div>
+
+  <figure class="team">
+    <img src="assets/img/team.jpg" width="1889" height="839" loading="lazy" data-asm="screen" data-asm-end=".45" data-i18n-attr="alt:profile.teamAlt" alt="">
+    <figcaption data-i18n="profile.caption"></figcaption>
+  </figure>
+
+  <div class="sub-block">
+    <span class="eyebrow" data-i18n="profile.certs"></span>
+    <div class="certs" id="certs" data-asm-stagger=".08"></div>
+  </div>
+
+  <div class="sub-block">
+    <span class="eyebrow" data-i18n="profile.clients"></span>
+    <div class="clients" id="clients" data-asm-stagger=".04"></div>
+  </div>
+</section>
+
+<!-- VISION · MISSION · TAGLINE -->
+<section class="vision">
+  <div class="wrap inner">
+    <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:28px">
+      <p class="tagline" data-split data-i18n="vision.tagline"></p>
+      <a href="#contact" class="btn btn-ink btn-lg" style="align-self:flex-start" data-asm="rise" data-i18n="vision.cta"></a>
+    </div>
+    <div class="asm-stage" style="flex:1 1 420px;display:flex;flex-direction:column;gap:32px" data-asm-stagger=".12">
+      <div class="vm" data-asm="swing"><span class="vm-t" data-i18n="vision.vT"></span><span class="vm-x" data-i18n="vision.vX"></span></div>
+      <div class="vm" data-asm="swing"><span class="vm-t" data-i18n="vision.mT"></span><span class="vm-x" data-i18n="vision.mX"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<section id="contact" class="contact">
+  <div class="wrap inner">
+    <div class="contact-copy">
+      <h2 class="h2" data-split data-i18n="contact.title"></h2>
+      <p data-asm="rise" data-i18n="contact.lead"></p>
+      <ul class="checks asm-stage" data-asm-stagger=".1">
+        <li data-asm="left"><span data-icon="check"></span><span data-i18n="contact.b1"></span></li>
+        <li data-asm="left"><span data-icon="check"></span><span data-i18n="contact.b2"></span></li>
+        <li data-asm="left"><span data-icon="check"></span><span data-i18n="contact.b3"></span></li>
+      </ul>
+      <div class="reach" data-asm="rise">
+        <div><div class="reach-l" data-i18n="contact.email"></div><a href="mailto:sales@infodation.com">sales@infodation.com</a></div>
+        <div><div class="reach-l" data-i18n="contact.phone"></div><a href="tel:+842583526477">(+84) 25 8352 6477</a></div>
+      </div>
+    </div>
+
+    <form class="form" id="contact-form" novalidate data-asm="right" data-asm-end=".5">
+      <h3 data-i18n="contact.formTitle"></h3>
+      <label><span data-i18n="contact.name"></span><input type="text" name="name" autocomplete="name" required></label>
+      <label><span data-i18n="contact.workEmail"></span><input type="email" name="email" autocomplete="email" required></label>
+      <label><span data-i18n="contact.problem"></span><select name="problem" id="problem-select"></select></label>
+      <label><span data-i18n="contact.bottleneck"></span><textarea name="bottleneck" rows="4"></textarea></label>
+      <div class="form-msg" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-accent" data-i18n="contact.submit"></button>
+      <span class="form-note" data-i18n="contact.note"></span>
+    </form>
+  </div>
+</section>
+</main>
+
+<div data-layout="footer"></div>
+</div>
+
+<script src="assets/js/i18n/en.js"></script>
+<script src="assets/js/i18n/vi.js"></script>
+<script src="assets/js/i18n/nl.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/data/solutions.js"></script>
+<script src="assets/js/docs.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/pages/home.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
